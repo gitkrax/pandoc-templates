@@ -77,7 +77,7 @@ $if(lang)$
   \setmainlanguage{$mainlang$}
   \setotherlanguages{$for(otherlang)$$otherlang$$sep$,$endfor$}
 \else
-  \usepackage[shorthands=off,$lang$]{babel}
+  \usepackage[$lang$]{babel}
 \fi
 $endif$
 $if(natbib)$

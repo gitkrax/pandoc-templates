@@ -64,14 +64,16 @@ $endif$
 \else
   \usepackage[unicode=true]{hyperref}
 \fi
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+% Color customization -- requires the xcolor package
+\definecolor{darkgray}{gray}{0.40}
 \hypersetup{breaklinks=true,
-            bookmarks=true,
+            bookmarks=false,
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
             colorlinks=true,
-            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            citecolor=$if(citecolor)$$citecolor$$else$darkgray$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$darkgray$endif$,
             linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls

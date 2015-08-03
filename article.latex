@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$if(documentclass)$$documentclass$$else$article$endif$}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
@@ -57,6 +57,11 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
+% Add some space if two columns are used
+$if(twocolumn)$
+\usepackage[margin=2.7cm]{geometry}
+\setlength{\columnsep}{1 cm}
+$endif$
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -74,7 +79,7 @@ $endif$
             colorlinks=true,
             citecolor=$if(citecolor)$$citecolor$$else$darkgray$endif$,
             urlcolor=$if(urlcolor)$$urlcolor$$else$darkgray$endif$,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$darkgray$endif$,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
 $if(lang)$
@@ -167,7 +172,11 @@ $endfor$
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
+% Some if-else to support two-column option with one column abstract
 \begin{document}
+$if(twocolumn)$
+\twocolumn[
+ \begin{@twocolumnfalse}
 $if(title)$
 \maketitle
 $endif$
@@ -175,6 +184,18 @@ $if(abstract)$
 \begin{abstract}
 $abstract$
 \end{abstract}
+$endif$
+\end{@twocolumnfalse}
+]
+$else$
+$if(title)$
+\maketitle
+$endif$
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
 $endif$
 
 $for(include-before)$

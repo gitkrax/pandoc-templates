@@ -62,6 +62,15 @@ $if(twocolumn)$
 \usepackage[margin=2.7cm]{geometry}
 \setlength{\columnsep}{1 cm}
 $endif$
+% Check to see if endnotes should be used instead
+$if(endnotes)$
+\usepackage{endnotes}
+\let\footnote=\endnote
+% Redefine the default title "Notes" to a line
+\def\enoteheading{\par\kern2\baselineskip%
+                  \footnoterule%
+                  \kern1\baselineskip}
+$endif$
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -216,6 +225,13 @@ $if(lof)$
 \listoffigures
 $endif$
 $body$
+
+$if(endnotes)$
+\begingroup
+\def\enotesize{\normalsize}
+\theendnotes
+\endgroup
+$endif$
 
 $if(natbib)$
 $if(bibliography)$

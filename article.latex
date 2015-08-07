@@ -8,10 +8,11 @@ $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
 $endif$
-$if(affiliation)$
+
 % use authblk for author affiliation
 \usepackage{authblk}
-$endif$
+\setlength{\affilsep}{0.2em}
+
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -163,9 +164,18 @@ $endif$
 $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
-$if(author)$
-\author{$for(author)$$author.name$ ($author.affiliation$)$sep$ \and $endfor$} 
+
+$for(author)$
+$if(author.name)$
+\author{$author.name$}
+$if(author.affiliation)$
+\affil{$author.affiliation$}
 $endif$
+$else$
+$author$
+$endif$
+$endfor$
+
 \date{$date$}
 $for(header-includes)$
 $header-includes$

@@ -154,6 +154,8 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(numbersections)$
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
 \setcounter{secnumdepth}{5}
 $else$
 \setcounter{secnumdepth}{0}

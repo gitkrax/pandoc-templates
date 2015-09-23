@@ -6,6 +6,8 @@
 \usepackage{ifxetex,ifluatex}
 \usepackage[margin=1in]{geometry}
 \usepackage[small,compact]{titlesec}
+% Get the correct date formatting -- requires lang to be set for languages other than English
+\usepackage{datetime2}
 \ifxetex
   \usepackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}

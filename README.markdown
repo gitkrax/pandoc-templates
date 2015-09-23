@@ -64,4 +64,4 @@ mostly for academic writing.
 * `aka.latex` is a tightly set template for writing Academy of Finland
   applications. Use level 1 headings for the main headings and level 2 headings
   for inline headings. You need to define fonts, papersize and margins in the
-  YAML-sections. Also set `numberedsections: true` for numbered sections.
+  YAML-sections. Also set `numberedsections: true` for numbered sections. Uses the `datetime2` package, so you can add the current date by writing `\today`.

@@ -22,6 +22,9 @@ $endif$
 \usepackage{authblk}
 \setlength{\affilsep}{0.2em}
 
+% use datetime2 so you can add current date with \today
+\usepackage{datetime2}
+
 % make sure figures don't float around
 \usepackage[section]{placeins}
 

@@ -1,9 +1,7 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$if(documentclass)$$documentclass$$else$article$endif$}
-$if(fontfamily)$
-\usepackage{$fontfamily$}
-$else$
-\usepackage{lmodern}
-$endif$
+\documentclass[12pt,$if(lang)$$lang$,$endif$a4paper,$for(classoption)$$classoption$$sep$,$endfor$]{$if(documentclass)$$documentclass$$else$article$endif$}
+
+\usepackage{times}
+
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
@@ -46,12 +44,10 @@ $endif$
   \fi
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
   \newcommand{\euro}{€}
-$if(mainfont)$
-    \setmainfont{$mainfont$}
-$endif$
-$if(sansfont)$
-    \setsansfont{$sansfont$}
-$endif$
+
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+
 $if(monofont)$
     \setmonofont[Mapping=tex-ansi]{$monofont$}
 $endif$

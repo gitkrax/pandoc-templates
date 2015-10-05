@@ -60,6 +60,8 @@ $endif$
 \else
   \usepackage[unicode=true]{hyperref}
 \fi
+\usepackage{url} % needed by breakurl
+\usepackage{breakurl} % break long urls on separate lines
 \usepackage[usenames,dvipsnames]{color}
 \hypersetup{breaklinks=true,
             bookmarks=true,

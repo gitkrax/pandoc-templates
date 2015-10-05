@@ -63,5 +63,7 @@ mostly for academic writing.
   Integrity. It needs to be run with xelatex.
 * `aka.latex` is a tightly set template for writing Academy of Finland
   applications. Use level 1 headings for the main headings and level 2 headings
-  for inline headings. You need to define fonts, papersize and margins in the
-  YAML-sections. Also set `numberedsections: true` for numbered sections. Uses the `datetime2` package, so you can add the current date by writing `\today`.
+  for inline headings. You have to define the margins in the YAML-sections 
+  (e.g. `geometry: margin=2.54cm`), other requirements are hard-coded.
+  Also set `numberedsections: true` for numbered sections. Uses the 
+  `datetime2` package, so you can add the current date by writing `\today`.

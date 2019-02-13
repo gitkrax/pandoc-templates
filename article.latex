@@ -2,6 +2,7 @@
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 $endif$
 $if(linestretch)$
@@ -168,6 +169,9 @@ $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
 
+$if(anonymous)$
+\author{Anonymous}
+$else$
 $for(author)$
 $if(author.name)$
 \author{$author.name$}
@@ -178,6 +182,7 @@ $else$
 $author$
 $endif$
 $endfor$
+$endif$
 
 \date{$date$}
 $for(header-includes)$

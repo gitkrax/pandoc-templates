@@ -4,6 +4,7 @@ $if(fontfamily)$
 $else$
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{fancyhdr}
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
@@ -64,6 +65,11 @@ $if(twocolumn)$
 \usepackage[margin=2.7cm]{geometry}
 \setlength{\columnsep}{1 cm}
 $endif$
+% customize header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\chead{$title$}
+\cfoot{\thepage}
 % Check to see if endnotes should be used instead
 $if(endnotes)$
 \usepackage{endnotes}
